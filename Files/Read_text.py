@@ -16,6 +16,6 @@ f = open(filePath + fileName, 'r')
 #print(len(f.readlines()))      # all line number
 
     
-for line in f.readlines():    
+for line in f:    
     print(line)
     

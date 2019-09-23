@@ -25,7 +25,6 @@ for fileName in files:
     print("old name：", fileName)
     os.rename(join(filePath, fileName), join(filePath, str(count))+".json")
     count +=1
-  elif isdir(fullpath):
-    print("folder：", fileName)
+
    
 

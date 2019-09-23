@@ -13,7 +13,7 @@ from os import listdir
 from os.path import isfile, isdir, join
 
 # file folder
-filePath = "C:\\Users\\barry.ke\\Desktop\\test\\";        # folder name    
+filePath = "";        # folder name    
 
 files = listdir(filePath)
 
@@ -21,6 +21,3 @@ for fileName in files:
   fullpath = join(filePath, fileName)  
   if isfile(fullpath):    
     print(os.path.isfile(fullpath))
-  
-   
-

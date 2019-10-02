@@ -15,7 +15,7 @@ outputFolder = ""                      # output folder name
 outputFile = "output.txt"              # output file name
 
 # open file
-fp = open(outputFolder + outputFile, "a")
+fp = open(outputFolder + outputFile, "a")       # 'a' --> overlapping
  
 #write to output file
 fp.writelines(txtstr)

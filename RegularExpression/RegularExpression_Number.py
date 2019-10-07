@@ -1,8 +1,7 @@
 # coding=utf8
 
-import re
-
 '''
+RegularExpression (Number)
 version: October 15, 2017 05:27 PM
 Last revision: October 15, 2017 05:27 PM
   
@@ -10,6 +9,9 @@ Last revision: October 15, 2017 05:27 PM
 
 @author: user
 '''
+
+import re
+
 pattern_str = '[a-z]+'
 pattern_num = '[0-9]+'
 

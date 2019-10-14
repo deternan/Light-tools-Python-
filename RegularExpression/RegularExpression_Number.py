@@ -2,12 +2,10 @@
 
 '''
 RegularExpression (Number)
-version: October 15, 2017 05:27 PM
-Last revision: October 15, 2017 05:27 PM
+version: October 07, 2017 05:27 PM
+Last revision: October 07, 2017 05:40 PM
   
- Author : Chao-Hsuan Ke
-
-@author: user
+Author : Chao-Hsuan Ke
 '''
 
 import re

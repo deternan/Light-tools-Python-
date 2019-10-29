@@ -10,6 +10,7 @@
  https://github.com/python/cpython/blob/3.6/Lib/random.py
  
 '''
+
 from random import randint
 
 min = 0;

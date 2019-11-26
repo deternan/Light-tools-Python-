@@ -2,14 +2,14 @@
 
 '''
 version: September 19, 2019 02:28 PM
-Last revision: November 26, 2019 09:22 AM
+Last revision: November 26, 2019 09:30 AM
   
 Author : Chao-Hsuan Ke
 
 ''' 
 
-filePath = "C:\\Users\\barry.ke\\Desktop\\";        # file path
-fileName = "Song Recommendation.txt";        # file name
+filePath = "";        # file path
+fileName = "";        # file name
 
 f = open(filePath + fileName, 'r', encoding="utf-8")
 #print(f.read())                 # print all at once time
@@ -21,6 +21,8 @@ f = open(filePath + fileName, 'r', encoding="utf-8")
 
 # read function
 data = f.read()
-print(len(data))
+#print(len(data))
+lines = data.split('\n')
+print(len(lines))
 
 f.close()

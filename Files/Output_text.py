@@ -2,7 +2,7 @@
 
 '''
 version: September 23, 2019 10:40 AM
-Last revision: September 23, 2019 11:12 AM
+Last revision: December 09, 2019 03:14 PM
   
 Author : Chao-Hsuan Ke
 
@@ -15,7 +15,7 @@ outputFolder = ""                      # output folder name
 outputFile = "output.txt"              # output file name
 
 # open file
-fp = open(outputFolder + outputFile, "a")       # 'a' --> overlapping
+fp = open(outputFolder + outputFile, "a", encoding='UTF-8')       # 'a' --> overlapping
  
 #write to output file
 fp.writelines(txtstr)

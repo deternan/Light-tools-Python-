@@ -37,7 +37,7 @@ for i in category:
     kk +=1
 
 print(categoryType)
-print((np.append(category, categoryType, axis=1)))
+#print((np.append(category, categoryType, axis=1)))
 
 # sample
 # x = np.array([[10,20,30], [40,50,60]])

@@ -2,7 +2,7 @@
 
 '''
 version: December 31 2019, 10:00 AM
-Last revision: December 31 2019, 11:33 AM
+Last revision: December 31 2019, 01:46 PM
 
 Author : Chao-Hsuan Ke
 '''
@@ -28,6 +28,8 @@ from org.apache.lucene.analysis.standard import StandardAnalyzer
 from org.apache.lucene.document import Document, Field, FieldType
 from org.apache.lucene.index import FieldInfo, IndexWriter, IndexWriterConfig, IndexOptions
 from org.apache.lucene.store import SimpleFSDirectory
+
+queryField = 'contents'
 
 class Ticker(object):
 
@@ -80,39 +82,34 @@ class IndexFiles(object):
             for filename in filenames:
                 if not filename.endswith('.txt'):
                     continue
-                print("adding", filename)
+                print(filename)
                 try:
                     path = os.path.join(sourceDir, filename)
-                    file = open(path)
-                    #contents = unicode(file.read(), 'iso-8859-1')
-                    contents = unicode(file.read(), 'utf-8')
-                    file.close()
+                    file = open(path, 'r', encoding="utf-8")
+                    contents = file.read()
+                    #contents = str(filecontent, 'utf-8')
+                    #contents = filecontent.encode('utf-8')
+                    #print('path', path, len(contents))
                     doc = Document()
                     doc.add(Field("name", filename, t1))            # filename (title)
                     #doc.add(Field("path", root, t1))
                     if len(contents) > 0:
-                        doc.add(Field("contents", contents, t2))    # content
+                        doc.add(Field(queryField, contents, t2))    # content
                     else:
                         print("warning: no content in %s" % filename)
                     writer.addDocument(doc)
+                    file.close()
                 except NameError:
                     print("Failed in indexDocs:")
 
 if __name__ == '__main__':
-    # if len(sys.argv) < 2:
-    #     #print IndexFiles.__doc__
-    #     sys.exit(1)
     lucene.initVM(vmargs=['-Djava.awt.headless=true'])
     #print 'lucene', lucene.VERSION
     start = datetime.now()
     try:
-        print(base_dir)
-        print(INDEX_DIR)
-        #base_dir = os.path.dirname(os.path.abspath(sys.argv[0]))
-        #IndexFiles(sys.argv[1], os.path.join(base_dir, INDEX_DIR), StandardAnalyzer())
         IndexFiles(base_dir, INDEX_DIR, StandardAnalyzer())
         end = datetime.now()
         print(end - start)
     except NameError:
-        print("Index Failed")
+        print("File Failed")
         #raise e

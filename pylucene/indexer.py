@@ -3,6 +3,8 @@
 
 Reference
 https://graus.nu/blog/pylucene-4-0-in-60-seconds-tutorial/
+https://stackoverflow.com/questions/47668000/pylucene-indexer-and-retriever-sample/54667233#54667233
+
 '''
 
 import sys

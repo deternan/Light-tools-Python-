@@ -8,6 +8,7 @@
 '''
 
 import numpy as np
+#import matplotlib.pyplot as plt
 
 # 1) shape
 # input = Input(shape=(32, ))
@@ -22,8 +23,10 @@ X = rng.normal(scale=5, size=(2, 20))
 print('X.shape:', X.shape, '\n')
 print(X)
 #print(X[:, 0])
-print(X[0, :])
-print(X[1, :])
+#print(X[0, :])
+#print(X[1, :])
+#print(X[0])
+print(X[0, :5])
 
 # 2) set (建立一個無序不重複元素集)
 # list1=[1,2,3,4,5,4,3]
@@ -79,3 +82,6 @@ print(X[1, :])
 # testZip = zip(prices.values(), prices.keys())
 # for aa in testZip:
 #     print(aa)
+
+# matplotlib
+#plt.scatter(X[0], X[1])

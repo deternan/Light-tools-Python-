@@ -2,7 +2,7 @@
 
 '''
 version: March 24, 09:20 AM
-Last revision: March 24, 02:30 PM
+Last revision: March 24, 03:20 PM
 
 Author : Chao-Hsuan Ke
 '''
@@ -17,13 +17,14 @@ https://www.w3schools.com/python/python_mongodb_find.asp
 
 from pymongo import MongoClient, errors
 from bson.objectid import ObjectId
+from datetime import datetime
 
-ip = ''     ## db IP
+ip = '10.136.154.5'     ## db IP
 port = 8083             ## db PORT
 
 dbName = 'ncov2019'
 collectionName = 'news_cdc'
-
+status_collectionName = 'chatStatus'
 
 try:
     # try to instantiate a client instance
@@ -69,16 +70,39 @@ collection = db[collectionName]
 '''
 query by ObjectId
 '''
-def get(post_id):
-    print(ObjectId(post_id))
-    # Convert from string to ObjectId:
+def QuerybyObjectId(post_id):
     document = collection.find_one({'_id': ObjectId(post_id)})
     print(document)
 
 
 idStr = '5e787132e2e8d50291462a8a'
-get(idStr)
+QuerybyObjectId(idStr)
+
 
 '''
 insert document
 '''
+def Insert(userName, type, requestId, count):
+    statusCollction = db[status_collectionName]
+    ## JSON data
+    data = {}
+    data['userName'] = userName
+    data['type'] = type
+    data['requestId'] = requestId
+    data['count'] = count
+    data['timestamp'] = datetime.utcnow()
+    #print(data)
+    x = statusCollction.insert_one(data)
+
+
+# userName = 'my Name'
+# type = 'gov'
+# requestId = 0
+# count = 0
+# Insert(userName, type, requestId, count)
+
+
+'''
+db connection close
+'''
+client.close()

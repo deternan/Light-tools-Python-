@@ -2,7 +2,7 @@
 '''
 Created on January 08, 2018    11:32 PM
 
-@author: Chao-Hsuan Ke
+author: Chao-Hsuan Ke
 '''
 
 import random;

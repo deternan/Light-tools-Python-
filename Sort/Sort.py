@@ -1,8 +1,11 @@
 # coding=utf8
-'''
-Created on 2017�~10��13��
 
-@author: Chao-Hsuan Ke
+'''
+Created on October 13, 2017   05:32 PM
+
+author: Chao-Hsuan Ke
+
+based on library
 '''
 
 num_arry = [100,10,15,20]

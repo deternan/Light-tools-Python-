@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
 '''
-version: April 22, 02:20 PM
-Last revision: April 22, 02:50 PM
+version: April 22 2020, 02:20 PM
+Last revision: April 22 2020, 02:50 PM
 '''
 
 '''
@@ -16,6 +16,12 @@ from mathfunc import *
 
 class TestMathFunc(unittest.TestCase):
     """Test mathfuc.py"""
+
+    def setUp(self):
+        print('test start')
+
+    def tearDown(self):
+        print('test end')
 
     def test_add(self):
         """Test method add(a, b)"""
@@ -34,6 +40,9 @@ class TestMathFunc(unittest.TestCase):
         """Test method divide(a, b)"""
         self.assertEqual(2, divide(6, 3))
         self.assertEqual(2.5, divide(5, 2))
+
+
+
 
 if __name__ == '__main__':
     # main function

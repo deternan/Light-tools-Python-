@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
 '''
-version: January 01 2021, 04:53 PM
-Last revision: January 01 2021, 06:27 PM
+version: January 04 2021, 04:53 PM
+Last revision: January 05 2021, 06:10 PM
 '''
 
 import unittest
@@ -15,15 +15,14 @@ class TestPerson(unittest.TestCase):
     #     print(getTest.getName())
 
 
-    def test_getName(self):
-        #print('test getNme')
+    def test_checkName(self):
         #print(self.assertEqual('John', 'Tom'))
         #print(self.assertEqual('John', 'John'))
         #print('Tom')
         getTest = Person('John')
         print(getTest.getName())
 
-    def test_getAge(self):
+    def test_checkAge(self):
         getTest = Person(123)
         print(getTest.getAge())
 

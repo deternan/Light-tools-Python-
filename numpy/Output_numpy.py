@@ -9,7 +9,7 @@ Author : Chao-Hsuan Ke
 
 import numpy as np
 
-base_dir = 'D:\\Phelps\\GitHub\\Python\\Light-tools\\Files\\'
+base_dir = ''
 outputfile = 'txtfile.txt'
 
 myArr = np.arange(15).reshape(3, 5)

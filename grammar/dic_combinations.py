@@ -22,3 +22,13 @@ y = {'119': ['35 usc', 'benefit 35 usc']}
 
 z = merge_two_dicts(x, y)
 print(z)
+
+x = {}
+y = {}
+z = merge_two_dicts(x, y)
+print(z)
+
+x = []
+y = []
+z = merge_two_dicts(x, y)
+print(z)

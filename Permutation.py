@@ -7,4 +7,5 @@ Author : Chao-Hsuan Ke
 '''
 
 from itertools import product
-print(list(product('ABC', 'xyz')))
+#print(list(product('ABC', 'xyz')))
+print(list(product('廖', '建', '弘洪')))

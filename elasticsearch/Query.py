@@ -10,6 +10,7 @@ Author : Chao-Hsuan Ke
 '''
 Reference
 https://iter01.com/566479.html
+https://iter01.com/583334.html
 
 '''
 
@@ -25,14 +26,23 @@ index_name = 'qmc_members'
 #result = es.get(index = index_name, id = 1)
 #print(result)
 
+# querybody = {
+#     "size": 5,
+#     "query": {
+#         "match": {
+#             "name": "廖健宏"
+#         }
+#     }
+# }
+
 querybody = {
-    "size": 5,
     "query": {
-        "match": {
-            "name": "張淑貞"
+        "match_phrase": {
+            "name": "廖健宏"
         }
     }
 }
+
 
 # querybody = {
 #     "size": 5,
@@ -53,7 +63,8 @@ print(res)
 #print(res.values())
 
 # method 3
-s=Search(using=es,index=index_name).filter("match",name='張淑貞')
+s=Search(using=es, index=index_name).filter("match_phrase", name='廖健宏')
 response=s.execute()
 print(response[0])
+print(response[0].name, response[0].id, response[0].phone)
 print(len(response))

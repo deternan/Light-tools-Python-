@@ -7,6 +7,13 @@ Last revision: May 02 2022, 03:45 PM
 Author : Chao-Hsuan Ke
 '''
 
+'''
+Reference
+https://segmentfault.com/a/1190000016844135
+https://www.letianbiji.com/elasticsearch/es7-python-client.html#es
+https://github.com/qax-os/ElasticHD
+'''
+
 from elasticsearch import Elasticsearch
 
 es = Elasticsearch(["http://127.0.0.1:9200"])
